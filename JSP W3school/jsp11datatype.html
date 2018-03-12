@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The JavaScript typeof Operator</h2>
+
+<p>The typeof operator returns the type of a variable, object, function or expression.</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 
+    typeof "john" + "<br>" +
+    typeof 3.14 + "<br>" +
+    typeof NaN + "<br>" +
+    typeof false + "<br>" +
+    typeof [1,2,3,4] + "<br>" +
+    typeof {name:'john', age:34} + "<br>" +
+    typeof new Date() + "<br>" +
+    typeof function () {} + "<br>" +
+    typeof myCar + "<br>" +
+    typeof null;
+</script>
+
+
+<h2>The JavaScript constructor Property</h2>
+
+<p>The constructor property returns the constructor function for a variable or an object.</p>
+
+<p id="democ"></p>
+
+<script>
+document.getElementById("democ").innerHTML = 
+    "john".constructor + "<br>" +
+    (3.14).constructor + "<br>" +
+    false.constructor + "<br>" +
+    [1,2,3,4].constructor + "<br>" +
+    {name:'john', age:34}.constructor + "<br>" +
+    new Date().constructor + "<br>" +
+    function () {}.constructor;
+</script>
+
+
+<h2>JavaScript Array Object</h2>
+<p>This "home made" isArray() function returns true when used on an array:</p>
+
+<p id="demoo"></p>
+<p id="demoo2"></p>
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demoo").innerHTML = isArray(fruits);
+
+document.getElementById("demoo2").innerHTML = isArrayeq(fruits);
+
+function isArrayeq(myArray) {
+    return myArray.constructor === Array;
+}
+
+function isArray(myArray) {
+    return myArray.constructor.toString().indexOf("Array") > -1;
+}
+</script>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+</script>
+
+
+<h2>JavaScript Date Object</h2>
+<p>This "home made" isDate() function returns true when used on an date:</p>
+
+<p id="demol"></p>
+
+<script>
+var myDate = new Date();
+document.getElementById("demol").innerHTML = isDate(myDate);
+
+function isDate(myDate) {
+    return myDate.constructor === Date;
+}
+</script>
+
+
+
+</body>
+</html>
+
+

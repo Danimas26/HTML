@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+obj.employees[2].firstName + " " + obj.employees[1].lastName;
+</script>
+
+
+<h2>Store and retreive data from local storage.</h2>
+
+<p id="demo1"></p>
+
+<script>
+var myObj, myJSON, text, obj;
+
+//Storing data:
+myObj = { "name":"John", "age":31, "city":"New York" };
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+//Retrieving data:
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+document.getElementById("demo1").innerHTML = obj.name;
+
+
+
+function myJSONadd() {
+var txt=""; txt1="";
+
+
+
+for (var i=0; i < parseInt(document.getElementById("ciut").value);i++) {
+   txt = txt + " \"" + document.getElementById("cars"+i).value + "\", " 
+}
+	if(txt != null && txt.length > 0)
+	txt = txt.substring(0,txt.length-2);
+	txt = "[ "+txt+" ]"; 
+	
+txt1 = "{\n" +
+			"    \""+document.getElementById("name1").name+"\":\""+document.getElementById("name1").value+"\",\n" +
+			"    \""+document.getElementById("age").name+"\":"+document.getElementById("age").value+",\n" +
+			"    \"cars\":"+txt+"\n" +
+			"}";
+			
+//alert(txt+parseInt(document.getElementById("ciut").value))
+document.getElementById("demo4").innerHTML = txt1;
+document.getElementById("carsup").value=txt1;
+console.log(txt1);
+}
+</script>
+
+
+<p>Looping through an array using a for in loop:</p>
+
+
+<p id="demo3"></p>
+
+<button type="submit" onclick="myJSONadd();" class="btn btn-default">Submit</button>
+<input type="hidden" id= "ciut" value="">
+<input type="hidden" id= "action" name= "action" value="save">
+<input type="hidden" id= "carsup" name= "carsup" value="">
+<p id="demo4"></p>
+
+<script>
+
+var myObj, i, x = "", y="";
+myObj = {
+    "name":"John",
+    "age":30,
+    "cars":[ "Ford", "BMW", "Fiat" ]
+};
+
+document.getElementById("ciut").value=(myObj.cars).length;
+ 
+y = "<input type=\"text\" id=\"name1\" name=\"name1\" value=\""+myObj.name+"\"><br> <input type=\"text\" id=\"age\" name=\"age\" value=\""+myObj.age+"\"><br>";
+ 
+ 
+for (i in myObj.cars) {
+    x += "<input type=\"text\" id=\"cars"+i+"\" name=\"cars"+i+"\" placeholder=\"Enter cars1\" value = \""+myObj.cars[i] +"\">" + "<br>";
+}
+
+document.getElementById("demo3").innerHTML = y+x;
+
+</script>
+
+
+<hr>
+
+
+<h2>Create JSON string from a JavaScript object.</h2>
+
+<p id="demo9"></p>
+
+<script>
+
+var obj = { "name":"John", "age":30, "city":"New York"};
+var myJSON = JSON.stringify(obj);
+document.getElementById("demo9").innerHTML = myJSON;
+
+</script>
+
+<hr>
+<h2>Convert a string into a date object.</h2>
+
+<p id="demo"></p>
+
+<script>
+
+var text = '{ "name":"John", "birth":"1986-12-14", "city":"New York"}';
+var obj = JSON.parse(text);
+obj.birth = new Date(obj.birth);
+
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth; 
+
+</script>
+
+</body>
+</html>

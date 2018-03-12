@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+<style>
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 5px;
+}
+th, td {
+    padding: 15px;
+}
+th {
+    text-align: left;
+}
+
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+table#t01 th {
+    color: white;
+    background-color: black;
+}
+</style>
+-->
+
+
+
+<p>simple table</p>
+
+<table style="width:10%">
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td> 
+    <td>94</td>
+  </tr>
+</table>
+
+<hr>
+
+<p>border table</p>
+<table border="1" style="width:40%">
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>		
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>		
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>		
+    <td>80</td>
+  </tr>
+</table>
+
+<hr>
+<p>table heading</p>
+<table border="1" style="width:30%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Points</th>
+  </tr>
+   <tr>
+    <td>Eve</td>
+    <td>Jackson</td>		
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>		
+    <td>80</td>
+  </tr>
+</table>
+
+<hr>
+<p>Table Cells that Span Many Columns</p>
+<table border="3" style="width:50%">
+  <tr>
+    <th>Name</th>
+    <th colspan="2">Telephone</th>
+  </tr>
+  <tr>
+    <td>Bill Gates</td>
+    <td>555 77 854</td>
+    <td>555 77 855</td>
+  </tr>
+   <tr>
+    <td>John</td>
+    <td>888 99 222</td>		
+    <td>80</td>
+  </tr>
+</table>
+
+<hr>
+<p>Table Cells that Span Many row</p>
+<table border="3" style="width:50%">
+  <tr>
+    <th>Name:</th>
+    <td>Bill Gates</td>
+  </tr>
+  <tr>
+    <th rowspan="2">Telephone:</th>
+    <td>555 77 854</td>
+  </tr>
+  <tr>
+    <td>555 77 855</td>
+  </tr>
+</table>
+
+<hr>
+<p>Table With a Caption</p>
+<table border="1" font="courier" style="width:20%">
+  <caption>Monthly savings</caption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$50</td>
+  </tr>
+   <caption>*data from</caption>
+</table>
+
+<hr>
+<p>Table With ID of css</p>
+<table id="t01">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td> 
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>		
+    <td>80</td>
+  </tr>
+</table>
+
+<hr>
+<p>custom Table</p>
+<table border="1" text-align="center" align="center" font="courier" style="width:40%">
+  <caption><strong>Telephone record</strong></caption>
+<tr>
+    <th>Name</th>
+	<th>Area code</th>
+    <th colspan="2">Telephone</th>
+	<th colspan="2">City</th>
+  </tr>
+  <tr>
+    <td>Bill Gates</td>
+	<td rowspan="2">91</td>
+    <td>555 77 854</td>
+    <td>555 77 855</td>
+	<td rowspan="1">WC</td>
+  </tr>
+   <tr>
+    <td>John</td>
+    <td>888 99 222</td>		
+    <td>809 50 100</td>
+	<td rowspan="2">NY</td>
+  </tr>
+    <tr>
+    <td>Mike</td>
+	<td rowspan="1">81</td>
+    <td>777 77 854</td>
+    <td>888 77 855</td>
+  </tr>
+</table>
+
+<hr>
+<p>Table end</p>
+
+</body>
+</html>

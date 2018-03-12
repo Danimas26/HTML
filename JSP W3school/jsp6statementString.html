@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Statements</h1>
+
+<p>JavaScript code (or just JavaScript) is a sequence of JavaScript statements.</p>
+
+<p id="demo"></p>
+
+<script>
+var x, y, z;
+x = 5;
+y = 6;
+z = x + y;
+document.getElementById("demo").innerHTML = z;
+</script>
+
+
+<p id="demo123"></p>
+
+<script>
+document.getElementById("demo123").innerHTML = "Hello Dolly.";
+</script>
+
+
+
+<p>JavaScript code blocks are written between { and }</p>
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+function myFunction() {
+    document.getElementById("demo1").innerHTML = "Hello Dolly.";
+    document.getElementById("demo2").innerHTML = "How are you?";
+}
+</script>
+
+
+<h1>JavaScript Variables</h1>
+
+<p>Strings are written with quotes.</p>
+<p>Numbers are written without quotes.</p>
+<p>Try to experiment by removing the // comments.</p>
+
+<p id="demo00"></p>
+<p id="demo10"></p>
+<p id="demo20"></p>
+
+<script>
+var pi = 3.14;
+var person = "John Doe";
+var answer = 'Yes I am!';
+
+document.getElementById("demo00").innerHTML = pi;
+document.getElementById("demo10").innerHTML = person;
+document.getElementById("demo20").innerHTML = answer;
+</script>
+
+
+<h1>Create a variable, assign a value to it, and display it:</h1>
+
+<p id="demovariable"></p>
+
+<script>
+var carName = "Volvo";
+document.getElementById("demovariable").innerHTML = carName;
+</script>
+
+<p>You can declare many variables in one statement.</p>
+
+<p id="demo567"></p>
+
+<script>
+var person = "John Doe",
+carName = "Volvo",
+price = 200;
+document.getElementById("demo567").innerHTML = carName+ " "+ person + "\n"+price;
+</script>
+
+
+
+<p>The result of adding 2 + 3 + "5":</p>
+
+<p id="demo88"></p>
+
+<script>
+var x = 2 + 3 + "5"
+document.getElementById("demo88").innerHTML = x;
+</script>
+
+
+<h1>The  Operator</h1>
+<p id="demoop"></p><p id="demoop1"></p><p id="demoop2"></p><p id="demoop3"></p><p id="demoop4"></p>
+<script>
+var x = 10;
+var z = 7;
+x += 5;
+document.getElementById("demoop").innerHTML = x;
+x -= 15;
+document.getElementById("demoop1").innerHTML = x;
+document.getElementById("demoop2").innerHTML = x+y;
+document.getElementById("demoop3").innerHTML = x/y+(100 + 50) * 3;
+document.getElementById("demoop4").innerHTML = x%y;
+</script>
+
+
+Java array - <p id="demoarry"></p> 
+<script>
+var cars = ["Saab","Volvo","BMW"];
+document.getElementById("demoarry").innerHTML = cars[1];
+</script>
+
+
+Java Objects <p id="demoobj"></p> 
+JavaScript objects are written with curly braces.
+<script>
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+document.getElementById("demoobj").innerHTML = person.age;
+</script>
+
+
+<h2>JavaScript typeof</h2>
+<p>The typeof operator returns the type of a variable or an expression.</p>
+
+
+
+myFunc <p id="demomyFunc"></p>
+<script>
+document.getElementById("demomyFunc").innerHTML = 
+typeof [1,2,3,4] + "<br>" +
+typeof {name:'john', age:34} + "<br>" +
+typeof function myFunc(){};
+</script>
+
+<p>Variables can be emptied by setting the value to <b>undefined</b>.</p>
+
+<p id="demoubd"></p>
+
+<script>
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+var person = undefined;
+document.getElementById("demoubd").innerHTML =
+person + "<br>" + typeof person;
+</script>
+
+
+<h1>JavaScript Functions</h1>
+
+<p>This example calls a function which performs a calculation and returns the result:</p>
+
+<p id="demoFunctions"></p>
+
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demoFunctions").innerHTML = myFunction(4, 3);
+</script>
+
+
+
+
+<h1>JavaScript Functions</h1>
+
+<button onclick="document.getElementById('demotime').innerHTML=Date()">The time is?</button>
+<p id="demotime"></p>
+
+<button onclick="document.getElementById('demoDate').innerHTML = Date()">The time is?</button>
+<p id="demoDate" ></p>
+
+
+<button onchange="this.innerHTML=Date()">The time is? onchange</button>
+
+<button onclick="this.innerHTML=Date()">The time is? onclick</button>
+
+<button onmouseover="this.innerHTML=Date()">The time is?onmouseover</button>
+
+<button onmouseout="this.innerHTML=Date()">The time is? onmouseout</button>
+
+<button onkeydown="this.innerHTML=Date()">The time is? onkeydown</button>
+
+<button onload="this.innerHTML=Date()">The time is? onload</button>
+
+
+
+<h2>String opertation</h2>
+<p id="demochr"></p>
+<p id="demochr1"></p>
+<p id="demochr2"></p>
+<p id="demochr3"></p>
+<script>
+
+var x = 'It\'s alright';
+var y = "We are the so-called \"Vikings\" from the north.";
+
+document.getElementById("demochr").innerHTML = x + "<br>" + y; 
+
+var str = "Please locate where 'locate' occurs!";
+var poss = str.search("locate");
+
+var pos = str.indexOf("locate");
+var pos1 = str.lastIndexOf("locate");
+
+document.getElementById("demochr1").innerHTML = pos ;
+document.getElementById("demochr2").innerHTML = pos1 ;
+document.getElementById("demochr3").innerHTML = poss ;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<body>
+JSP DATE
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = Date();
+</script>
+
+<p id="demo1"></p>
+
+<script>
+var d = new Date("October 13, 2014 11:13:00");
+document.getElementById("demo1").innerHTML = d;
+</script>
+
+
+<p id="demo2"></p>
+
+<script>
+var d = new Date(99,5,24,11,33,30,0);
+document.getElementById("demo2").innerHTML = d;
+</script>
+
+<p>The toUTCString() method converts a date to a UTC string (date display 
+standard).</p>
+
+<p id="demo3"></p>
+
+<script>
+var d = new Date();
+var d1 = new Date("2015-03-25");
+var d2 = new Date("2015-03");
+var d3 = new Date("2015");
+var d4 = new Date("2015-03-25T12:00:00Z");
+var d5 = new Date("2015-03-25T12:00:00-06:30");
+document.getElementById("demo3").innerHTML = d.toUTCString();
+</script>
+
+<p>The internal clock in JavaScript starts at midnight January 1, 1970.</p>
+<p id="demo4"></p>
+
+<script>
+var d = new Date();
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+document.getElementById("demo4").innerHTML = d.getTime() + d.getFullYear() + d.getDay() + days[d.getDay();
+
+</script>
+
+<p>Set method </p>
+<p id="demo5"></p>
+
+<script>
+var d = new Date();
+d.setFullYear(2020, 0, 14);
+d.setDate(20);
+d.setDate(d.getDate() + 50);
+document.getElementById("demo5").innerHTML = d;
+</script>
+
+<p id="demo6"></p>
+
+<script>
+var today, someday, text;
+today = new Date();
+someday = new Date();
+someday.setFullYear(2100, 0, 14);
+
+if (someday > today) {
+    text = "Today is before January 14, 2100.";
+} else {
+    text = "Today is after January 14, 2100.";
+}
+document.getElementById("demo6").innerHTML = text;
+</script>
+
+
+
+</body>
+</html>

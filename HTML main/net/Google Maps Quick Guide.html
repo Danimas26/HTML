@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)http://www.tutorialspoint.com/google_maps/google_maps_quick_guide.htm -->
+<html class=" js no-touch csstransforms3d csstransitions" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Google Maps Quick Guide</title>
+<meta name="Description" content="Google Maps Quick Guide - Free Google Maps Tutorials, Reference Manual, and Guide for beginners, Google Maps JavaScript API tutorial. Learn how to use Google Maps JavaScript API from Map Types, Zoom, localizing the Map, UI controls, Markers, Shapes, Overlays, Info Window, Symbols and Map events.">
+<meta name="Keywords" content="Free, Google Maps, JavaScript API, Tutorials, Reference, Manual, Guide, Beginners, API from Map Types, Zoom, localizing the Map, UI controls, Markers, Shapes, Overlays, Info Window, Symbols and Map events.">
+<!--<base href="http://www.tutorialspoint.com/">--><base href=".">
+<link rel="shortcut icon" href="http://www.tutorialspoint.com/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="fb:app_id" content="471319149685276">
+<meta property="og:site_name" content="www.tutorialspoint.com">
+<meta name="robots" content="index, follow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script src="./Google Maps Quick Guide_files/ca-pub-7133395778201029.js"></script><script type="text/javascript" src="./Google Maps Quick Guide_files/script-min-v4.js"></script>
+<link rel="stylesheet" href="./Google Maps Quick Guide_files/style-min.css">
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(/google_maps/images/try-it.jpg) top right no-repeat !important}div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #71a531 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #71a531 !important;}
+.submenu-item{ border-bottom: 2px solid #71a531 !important; border-top: 2px solid #71a531 !important }
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()" class="sticky-menu-active" style="padding-top: 111px;">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img src="./Google Maps Quick Guide_files/loading-cg.gif" alt="" width="70" height="70">
+   </div>
+</div>
+<header>
+   <div class="container">			
+      <h1 class="logo logo-sticky-active">
+      <a href="http://www.tutorialspoint.com/index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="./Google Maps Quick Guide_files/logo.png" style="height: 40px; width: 137px; display: inline-block; top: 28px;">
+      </a>
+      </h1>			
+      <div class="search" id="searchBar">
+         <form method="get" class="searchform" name="searchform" action="http://www.google.com/search" target="_blank">
+            <input type="hidden" name="sitesearch" value="www.tutorialspoint.com">
+            <div class="input-group">
+               <input type="text" class="form-control search" name="q" autocomplete="off" placeholder="Search your tutorials..." onfocus="if (this.value == &#39;Search your tutorials...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search your tutorials...&#39;;}">
+               <input value="FORID:11" name="cof" type="hidden">
+               <input type="hidden" name="ie" value="ISO-8859-1">
+               <span class="input-group-btn"> <button class="btn btn-default" type="submit" onclick="javascript:void(0);"><i class="icon icon-search"></i></button> </span>
+            </div>
+         </form>
+      </div>
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li style="background: #F9EC18;     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; border:1px solid #d6d6d6"> <a href="http://www.tutorialspoint.com/about/about_careers.htm"><i class="fa fa-thumbs-o-up"></i> &nbsp;We are hiring</a> </li>
+            <li> <a href="http://www.tutorialspoint.com/shared-tutorials.php"><i class="icon icon-user"></i> &nbsp;Shared</a> </li>
+            <li> <a href="http://www.tutorialspoint.com/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>
+            <li> <a href="http://www.tutorialspoint.com/questions_and_answers.htm"><i class="fa fa-question"></i> &nbsp;Quizzes</a> </li>
+            <li class="top-icons" style="display:none;">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="http://www.twitter.com/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="http://www.linkedin.com/company/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="rss"><a href="http://feeds.feedburner.com/SharedTutorials" target="_blank" data-placement="bottom" title="tutorialspoint RSS">RSS</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+         <!-- search code here  --> 
+      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 39279px!important"> <i class="icon icon-bars"></i> </button>
+   </div>
+   <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="http://www.tutorialspoint.com/index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown" id="liTL"><a class="dropdown" href="javascript:void(0);"><span class="tut-lib"> Tutorials Library  <i class="fa-caret-down"></i></span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="http://www.tutorialspoint.com/codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.send18.com/" target="_blank"><i class="fa fa-send"></i>  Send18</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="http://www.tutorialspoint.com/online_file_conversion.htm"><i class="icon icon-refresh"></i>  Conversion</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="http://www.tutorialspoint.com/online_dev_tools.htm"><span class="dev-tools-menu">  Dev Tools</span></a></li>
+            </ul>
+         </nav>
+         <div class="submenu-item sub-main-menu" id="top-sub-menu"></div>
+      </div>
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="./Google Maps Quick Guide_files/google-map-mini-logo.jpg" alt="Google Maps Tutorial">
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Google Maps Tutorial</li>
+<li><a href="http://www.tutorialspoint.com/google_maps/index.htm">Google Maps - Home</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_getting_started.htm">Google Maps - Getting Started</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_types.htm">Google Maps - Types</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_zoom.htm">Google Maps - Zoom</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_localization.htm">Google Maps - Localization</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_ui_controls.htm">Google Maps - UI Controls</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_markers.htm">Google Maps - Markers</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_shapes.htm">Google Maps - Shapes</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_info_window.htm">Google Maps - Info Window</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_symbols.htm">Google Maps - Symbols</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_events.htm">Google Maps - Events</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Google Maps Resources</li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_quick_guide.htm" style="background-color: rgb(214, 214, 214);">Google Maps - Quick Guide</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_useful_resources.htm">Google Maps - Useful Resources</a></li>
+<li><a href="http://www.tutorialspoint.com/google_maps/google_maps_discussion.htm">Google Maps - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="http://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Google Maps - Quick Guide</h1>
+<div class="topgooglead">
+<hr>
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript" src="./Google Maps Quick Guide_files/show_ads.js"> 
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="http://www.tutorialspoint.com/google_maps/google_maps_events.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="http://www.tutorialspoint.com/google_maps/google_maps_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr>
+<h1>Google Maps - Getting Started</h1>
+<h2>What are Google Maps?</h2>
+<p>Google Maps is a free web mapping service by Google that provides various types of geographical information. Using Google Maps, one can.</p>
+<ul class="list">
+<li><p>Search for places or get directions from one place to another.</p></li>
+<li><p>View and navigate through horizontal and vertical panoramic street level images of various cities around the world.</p></li>
+<li><p>Get specific information like traffic at a particular point.</p></li>
+</ul>
+<p>Google Maps provides an API using which you can customize the maps and the information displayed on them. This chapter explains how to load a simple Google Map on your web page using HTML and JavaScript.</p>
+<h2>Steps to Load the Map on a Webpage</h2>
+<p>Follow the steps given below to load a map on your webpage −</p>
+<h3>Step 1 : Create an HTML Page</h3>
+<p>Create a basic HTML page with head and body tags as shown below −</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body&gt;</span><span class="pln">
+   ..............
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<h3>Step 2 : Load the API</h3>
+<p>Load or include the Google Maps API using the script tag as shown below −</p>
+<pre class="prettyprint notranslate  prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body&gt;</span><span class="pln">
+   ..............
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<h3>Step 3 : Create the Container</h3>
+<p>To hold the map, we have to create a container element, generally the &lt;div&gt; tag (a generic container) is used for this purpose. Create a container element and define its dimensions as shown below −</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">900px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span></pre>
+<h3>Step 4 : Map Options</h3>
+<p>Before initializing the map, we have to create a <b>mapOptions</b> object (it is created just like a literal) and set values for map initialization variables. A map has three main options, namely, <b>centre</b>, <b>zoom</b>, and <b>maptypeid</b>.</p>
+<ul class="list">
+<li><p><b>centre</b> − Under this property, we have to specify the location where we want to centre the map. To pass the location, we have to create a <b>LatLng</b> object by passing the latitude and longitudes of the required location to the constructor.</p></li>
+<li><p><b>zoom</b> − Under this property, we have to specify the zoom level of the map.</p></li>
+<li><p><b>maptypeid</b>− Under this property, we have to specify the type of the map we want. Following are the types of maps provided by Google −</p>
+<ul class="list">
+<li>ROADMAP (normal, default 2D map)</li>
+<li>SATELLITE (photographic map)</li>
+<li>HYBRID (combination of two or more other types)</li>
+<li>TERRAIN (map with mountains, rivers, etc.)</li>
+</ul>
+</li>
+</ul>
+<p>Within a function, say, <b>loadMap()</b>, create the mapOptions object and set the required values for center, zoom, and mapTypeId as shown below.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.240498</span><span class="pun">,</span><span class="pln"> </span><span class="lit">82.287598</span><span class="pun">),</span><span class="pln"> 
+      zoom</span><span class="pun">:</span><span class="lit">9</span><span class="pun">,</span><span class="pln"> 
+      mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+   </span><span class="pun">};</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<h3>Step 5 : Create a Map Object</h3>
+<p>You can create a map by instantiating the JavaScript class called <b>Map</b>. While instantiating this class, you have to pass an HTML container to hold the map and the map options for the required map. Create a map object as shown below.</p>
+<pre class="result notranslat">var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+</pre>
+<h3>Step 6 : load the map</h3>
+<p>Finally load the map by calling the loadMap() method or by adding DOM listener.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="kwd">event</span><span class="pun">.</span><span class="pln">addDomListener</span><span class="pun">(</span><span class="pln">window</span><span class="pun">,</span><span class="pln"> </span><span class="str">'load'</span><span class="pun">,</span><span class="pln"> loadMap</span><span class="pun">);</span><span class="pln">
+                    </span><span class="kwd">or</span><span class="pln">
+</span><span class="pun">&lt;</span><span class="pln">body onload </span><span class="pun">=</span><span class="pln"> </span><span class="str">"loadMap()"</span><span class="pun">&gt;</span></pre>
+<h2>Example</h2>
+<p>The following example shows how to load the roadmap of the city named Vishakhapatnam with a zoom value of 12.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.609993</span><span class="pun">,</span><span class="pln"> </span><span class="lit">83.221436</span><span class="pun">),</span><span class="pln"> 
+               zoom</span><span class="pun">:</span><span class="lit">12</span><span class="pun">,</span><span class="pln"> 
+               mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+            </span><span class="pun">};</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+			
+         google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">addDomListener</span><span class="pun">(</span><span class="pln">window</span><span class="pun">,</span><span class="pln"> </span><span class="str">'load'</span><span class="pun">,</span><span class="pln"> loadMap</span><span class="pun">);</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/sample.html" width="600px" height="420px"></iframe>
+<h1>Google Maps - Types</h1>
+<p>In the previous chapter, we discussed how to load a basic map. Here, we will see how to select a required map type.</p>
+<h2>Types of Maps</h2>
+<p>Google Maps provides four types of maps. They are −</p>
+<ul class="list">
+<li><p><b>ROADMAP</b> − This is the default type. If you haven't chosen any of the types, this will be displayed. It shows the street view of the selected region.</p></li>
+<li><p><b>SATELLITE</b> − This is the map type that shows the satellite images of the selected region.</p></li>
+<li><p><b>HYBRID</b> − This map type shows the major streets on satellite images.</p></li>
+<li><p><b>TERRAIN</b> − This is the map type that shows the terrain and vegetation</p></li>
+</ul>
+<h3>Syntax</h3>
+<p>To select one of these map types, you have to mention the respective map type id in the map options as shown below −</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><b><span class="typ">Id</span><span class="pln"> of the required map type</span></b><span class="pln">
+</span><span class="pun">};</span></pre>
+<h2>Roadmap</h2>
+<p>The following example shows how to select a map of type ROADMAP −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.609993</span><span class="pun">,</span><span class="pln"> </span><span class="lit">83.221436</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">9</span><span class="pun">,</span><span class="pln">
+               </span><font size="3"><b><span class="pln">mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><i><span class="pln">ROADMAP</span></i></b></font><span class="pln">
+            </span><span class="pun">};</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+			
+         google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">addDomListener</span><span class="pun">(</span><span class="pln">window</span><span class="pun">,</span><span class="pln"> </span><span class="str">'load'</span><span class="pun">,</span><span class="pln"> loadMap</span><span class="pun">);</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/roadmap.html" width="600px" height="420px"></iframe>
+<h2>Satellite</h2>
+<p>The following example shows how to select a map of type SATELLITE −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.609993</span><span class="pun">,</span><span class="pln"> </span><span class="lit">83.221436</span><span class="pun">),</span><span class="pln">
+                  zoom</span><span class="pun">:</span><span class="lit">9</span><span class="pun">,</span><span class="pln">
+                  </span><font size="3"><b><span class="pln">mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><i><span class="pln">SATELLITE</span></i></b></font><span class="pln">
+            </span><span class="pun">};</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+			
+         google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">addDomListener</span><span class="pun">(</span><span class="pln">window</span><span class="pun">,</span><span class="pln"> </span><span class="str">'load'</span><span class="pun">,</span><span class="pln"> loadMap</span><span class="pun">);</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+		
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;body&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/satellite.html" width="600px" height="420px"></iframe> 
+<h2>Hybrid</h2>
+<p>The following example shows how to select a map of type HYBRID −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.609993</span><span class="pun">,</span><span class="pln"> </span><span class="lit">83.221436</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">9</span><span class="pun">,</span><span class="pln">
+               </span><font size="3"><b><span class="pln">mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><i><span class="typ">Hybrid</span></i></b></font><span class="pln">
+            </span><span class="pun">};</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+			
+         google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">addDomListener</span><span class="pun">(</span><span class="pln">window</span><span class="pun">,</span><span class="pln"> </span><span class="str">'load'</span><span class="pun">,</span><span class="pln"> loadMap</span><span class="pun">);</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/hybrid.html" width="600px" height="420px"></iframe> 
+<h2>Terrain</h2>
+<p>The following example shows how to select a map of type TERRAIN −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.609993</span><span class="pun">,</span><span class="pln"> </span><span class="lit">83.221436</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">9</span><span class="pun">,</span><span class="pln">
+               </span><font size="3"><b><span class="pln">mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><i><span class="pln">TERRAIN</span></i></b></font><span class="pln">
+            </span><span class="pun">};</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+			
+         google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">addDomListener</span><span class="pun">(</span><span class="pln">window</span><span class="pun">,</span><span class="pln"> </span><span class="str">'load'</span><span class="pun">,</span><span class="pln"> loadMap</span><span class="pun">);</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/terrain.html" width="600px" height="420px"></iframe>
+<h1>Google Maps - Zoom</h1>
+<h2>Increase/Decrease the Zoom Value</h2>
+<p>You can increase or decrease the zoom value of a map by modifying the value of the <b>zoom</b> attribute in the the map options.</p>
+<h3>Syntax</h3>
+<p>We can increase or decrease the zoom value of the map using the zoom option. Given below is the syntax to change the zoom value of the current map.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><b><span class="pln">zoom</span><span class="pun">:</span><span class="pln">required zoom value</span></b><span class="pln">
+</span><span class="pun">};</span></pre>
+<h2>Example : Zoom 6</h2>
+<p>The following code will display the roadmap of the city Vishakhapatnam with a zoom value of 6.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.609993</span><span class="pun">,</span><span class="pln"> </span><span class="lit">83.221436</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">6</span><span class="pun">,</span><span class="pln">
+               </span><font size="3"><b><span class="pln">mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><i><span class="pln">ROADMAP</span></i></b></font><span class="pln">
+            </span><span class="pun">};</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">587px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/zoom_6.html" width="600px" height="420px"></iframe>
+<h2>Example : Zoom 10</h2>
+<p>The following code will display the roadmap of the city Vishakhapatnam with a zoom value of 10.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.609993</span><span class="pun">,</span><span class="pln"> </span><span class="lit">83.221436</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">10</span><span class="pun">,</span><span class="pln">
+               </span><font size="3"><b><span class="pln">mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><i><span class="pln">ROADMAP</span></i></b></font><span class="pln">
+            </span><span class="pun">};</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">587px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/zoom_10.html" width="600px" height="420px"></iframe>
+<h1>Google Maps - Localization</h1>
+<p>By default, the city names and option names given on the map will be in English. If required, we can display such information in other languages as well. This process is known as <b>localization</b>. In this chapter, we will learn how to localize a map.</p>
+<h2>Localizing a Map</h2>
+<p>You can customize (localize) the language of the map by specifying the language option in the URL as shown below.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"https://maps.googleapis.com/maps/api/js?language=zh-Hans"</span><span class="tag">&gt;&lt;/script&gt;</span></pre>
+<h3>Example</h3>
+<p>Here is an example that shows how to localize GoogleMaps. Here you can see a roadmap of China that is localized to Chinese language.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"https://maps.googleapis.com/maps/api/js?language=zh-Hans"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">32.870360</span><span class="pun">,</span><span class="pln"> </span><span class="lit">101.645508</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">9</span><span class="pun">,</span><span class="pln"> 
+               mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+            </span><span class="pun">};</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<h3>Output</h3>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/google_maps_localizing.html" height="420px" width="600px"></iframe>
+<h1>Google Maps - UI Controls</h1>
+<p>Google Maps provides a User Interface with various controls to let the user interact with the map. We can add, customize, and disable these controls.</p>
+<h2>Default Controls</h2>
+<p>Here is a list of the default controls provided by Google Maps −</p>
+<ul class="list">
+<li><p><b>Zoom</b> − To increase and decease the zoom level of the map, we will have a slider with + and − buttons, by default. This slider will be located at the corner of left hand side of the map.</p></li>
+<li><p><b>Pan</b> − Just above the zoom slider, there will be a pan control for panning the map.</p></li>
+<li><p><b>Map Type</b> − You can locate this control at the top right corner of the map. It provides map type options such as Satellite, Roadmap, and Terrain. Users can choose any of these maps.</p></li>
+<li><p><b>Street view</b> − Between the pan icon and the zoom slider, we have a pegman icon. Users can drag this icon and place at a particular location to get its street view.</p></li>
+</ul>
+<h3>Example</h3>
+<p>Here is an example where you can observe the default UI controls provided by Google Maps −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/map_with_default_controls.html" height="420px" width="600px"></iframe> 
+<h2>Disabling the UI Default Controls</h2>
+<p>We can disable the default UI controls provided by Google Maps simply by making the <b>disableDefaultUI</b> value true in the map options.</p>
+<h3>Example</h3>
+<p>The following example shows how to disable the default UI controls provided by Google Maps.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.609993</span><span class="pun">,</span><span class="pln"> </span><span class="lit">83.221436</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pun">,</span><span class="pln">
+               mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP</span><span class="pun">,</span><span class="pln">
+               disableDefaultUI</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
+            </span><span class="pun">};</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/disabling_default_controls.html" height="420px" width="600px"></iframe> 
+<h2>Enabling/Disabling All the Controls</h2>
+<p>In addition to these default controls, Google Maps also provides three more controls as listed below.</p>
+<ul class="list">
+<li><p><b>Scale</b> − The Scale control displays a map scale element. This control is not enabled by default.</p></li>
+<li><p><b>Rotate</b> − The Rotate control contains a small circular icon which allows you to rotate maps containing oblique imagery. This control appears by default at the top left corner of the map. (See 45° Imagery for more information.)</p></li>
+<li><p><b>Overview</b> − To increase and decease the zoom level of the map, we have a slider with + and − buttons, by default. This slider is located at the left corner of the map.</p></li>
+</ul>
+<p>In the map options, we can enable and disable any of the controls provided by Google Maps as shown below −</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="pun">{</span><span class="pln">
+   panControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pun">,</span><span class="pln">
+   zoomControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pun">,</span><span class="pln">
+   mapTypeControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pun">,</span><span class="pln">
+   scaleControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pun">,</span><span class="pln">
+   streetViewControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pun">,</span><span class="pln">
+   overviewMapControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<h3>Example</h3>
+<p>The following code shows how to enable all the controls −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">19.373341</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.662109</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pun">,</span><span class="pln">
+               panControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               zoomControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               scaleControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               mapTypeControl</span><span class="pun">:</span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               streetViewControl</span><span class="pun">:</span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               overviewMapControl</span><span class="pun">:</span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               rotateControl</span><span class="pun">:</span><span class="kwd">true</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/enabling_all_controls.html" height="420px" width="600px"></iframe> 
+<h2>Control Options</h2>
+<p>We can change the appearance of Google Maps controls using its control options. For example, the zoom control can be either reduced or enlarged in size. The MapType control appearance can be varied to a horizontal bar or a drop-down menu. Given below is a list of Control options for Zoom and MapType controls.</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th>Sr.No.</th>
+<th>Control Name</th>
+<th>Control Options</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Zoom control</td>
+<td>
+<ul class="list">
+<li>google.maps.ZoomControlStyle.SMALL</li>
+<li>google.maps.ZoomControlStyle.LARGE</li>
+<li>google.maps.ZoomControlStyle.DEFAULT</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MapType control</td>
+<td>
+<ul class="list">
+<li>google.maps.MapTypeControlStyle.HORIZONTAL_BAR</li>
+<li>google.maps.MapTypeControlStyle.DROPDOWN_MENU</li>
+<li>google.maps.MapTypeControlStyle.DEFAULT</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<h3>Example</h3>
+<p>The following example demonstrates how to use the control options −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">19.373341</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.662109</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pun">,</span><span class="pln">
+               mapTypeControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               
+               mapTypeControlOptions</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  style</span><span class="pun">:</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeControlStyle</span><span class="pun">.</span><span class="pln">DROPDOWN_MENU</span><span class="pun">,</span><span class="pln"> mapTypeIds</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+                     google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP</span><span class="pun">,</span><span class="pln">
+                     google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">TERRAIN
+                  </span><span class="pun">]</span><span class="pln">
+               </span><span class="pun">},</span><span class="pln">
+					
+               zoomControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               
+               zoomControlOptions</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  style</span><span class="pun">:</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">ZoomControlStyle</span><span class="pun">.</span><span class="pln">SMALL
+               </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/control_options.html" height="420px" width="600px"></iframe> 
+<h2>Control Positioning</h2>
+<p>You can change the position of the controls by adding the following line in the control options.</p>
+<pre class="result notranslate">position:google.maps.ControlPosition.<b>Desired_Position</b>,
+</pre>
+<p>Here is the list of available positions where a control can be placed on a map −</p>
+<ul class="list">
+<li>TOP_CENTER</li>
+<li>TOP_LEFT</li>
+<li>TOP_RIGHT</li>
+<li>LEFT_TOP</li>
+<li>RIGHT_TOP</li>
+<li>LEFT_CENTER</li>
+<li>RIGHT_CENTER</li>
+<li>LEFT_BOTTOM</li>
+<li>RIGHT_BOTTOM</li>
+<li>BOTTOM_CENTER</li>
+<li>BOTTOM_LEFT</li>
+<li>BOTTOM_RIGHT</li>
+</ul>
+<h3>Example</h3>
+<p>The following example shows how to place the MapTypeid control at the top centre of the map and how to place the zoom control at the bottom centre of the map.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">19.373341</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.662109</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pun">,</span><span class="pln">
+               mapTypeControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               
+               mapTypeControlOptions</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  style</span><span class="pun">:</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeControlStyle</span><span class="pun">.</span><span class="pln">DROPDOWN_MENU</span><span class="pun">,</span><span class="pln">
+                  position</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">ControlPosition</span><span class="pun">.</span><span class="pln">TOP_CENTER</span><span class="pun">,</span><span class="pln">
+                  
+                  mapTypeIds</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+                     google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP</span><span class="pun">,</span><span class="pln">
+                     google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">TERRAIN
+                  </span><span class="pun">]</span><span class="pln">
+               </span><span class="pun">},</span><span class="pln">
+					
+               zoomControl</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               
+               zoomControlOptions</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  style</span><span class="pun">:</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">ZoomControlStyle</span><span class="pun">.</span><span class="pln">SMALL</span><span class="pun">,</span><span class="pln">
+                  position</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">ControlPosition</span><span class="pun">.</span><span class="pln">BOTTOM_CENTER
+               </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span><span class="pln"> </span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/control_position.html" height="420px" width="600px"></iframe>
+<h1>Google Maps - Markers</h1>
+<p>We can draw objects on the map and bind them to a desired latitude and longitude. These are called overlays. Google Maps provides various overlays as shown below.</p>
+<ul class="list">
+<li>Markers</li>
+<li>Polylines</li>
+<li>Polygons</li>
+<li>Circle and rectangle</li>
+<li>Info window</li>
+<li>Symbols</li>
+</ul>
+<p>To mark a single location on the map, Google Maps provides <b>markers</b>. These markers use a standard symbol and these symbols can be customized. This chapter explains how to add markers, and how to customize, animate, and remove them.</p>
+<h2>Adding a Simple Marker</h2>
+<p>You can add a simple marker to the map at a desired location by instantiating the marker class and specifying the position to be marked using latlng, as shown below.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+   position</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">19.373341</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.662109</span><span class="pun">),</span><span class="pln">
+   map</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">,</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">  </span></pre>
+<h3>Example</h3>
+<p>The following code sets the marker on the city Hyderabad (India).</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">19.373341</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.662109</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">7</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.088291</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.442383</span><span class="pun">),</span><span class="pln">
+               map</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">,</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/adding_marker.html" height="420px" width="600px"></iframe>
+<h2>Animating the Marker</h2>
+<p>After adding a marker to the map, you can go further and add animations to it such as <b>bounce</b> and <b>drop</b>. The following code snippet shows how to add bounce and drop animations to a marker.</p>
+<pre class="result notranslate">//To make the marker bounce`
+animation:google.maps.Animation.BOUNCE 
+
+//To make the marker drop
+animation:google.maps.Animation.Drop 
+</pre>
+<h3>Example</h3>
+<p>The following code sets the marker on the city Hyderabad with an added animation effect −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.377631</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.478603</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+				
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.377631</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.478603</span><span class="pun">),</span><span class="pln">
+               map</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">,</span><span class="pln">
+               animation</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Animation</span><span class="pun">.</span><span class="typ">Drop</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/animating_marker.html" height="420px" width="600px"></iframe>
+<h2>Customizing the Marker</h2>
+<p>You can use your own icons instead of the default icon provided by Google Maps. Just set the icon as <b>icon:'ICON PATH'</b>. And you can make this icon draggable by setting <b>draggable:true</b>.</p>
+<h3>Example</h3>
+<p>The following example shows how to customize the marker to a desired icon −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.377631</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.478603</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.377631</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.478603</span><span class="pun">),</span><span class="pln">
+               map</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">,</span><span class="pln">
+               draggable</span><span class="pun">:</span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               icon</span><span class="pun">:</span><span class="str">'/scripts/img/logo-footer.png'</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+				
+            marker</span><span class="pun">.</span><span class="pln">setMap</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/icon_as_marker.html" height="420px" width="600px"></iframe>
+<h2>Removing the Marker</h2>
+<p>You can remove an existing marker by setting up the marker to null using the <b>marker.setMap()</b> method.</p>
+<h3>Example</h3>
+<p>The following example shows how to remove the marker from a map −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.377631</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.478603</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.377631</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.478603</span><span class="pun">),</span><span class="pln">
+               map</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">,</span><span class="pln">
+               animation</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Animation</span><span class="pun">.</span><span class="typ">Drop</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+				
+            marker</span><span class="pun">.</span><span class="pln">setMap</span><span class="pun">(</span><span class="kwd">null</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/removing_marker.html" height="420px" width="600px"></iframe>
+<h1>Google Maps - Shapes</h1>
+<p>In the previous chapter, we learned how to use markers in Google Maps. Along with markers, we can also add various shapes such as circles, polygons, rectangles, polylines, etc. This chapter explains how to use the shapes provided by Google Maps.</p>
+<h2>Polylines</h2>
+<p>Polylines, provided by Google Maps, are useful to track different paths. You can add polylines to a map by instantiating the class <b>google.maps.Polyline</b>. While instantiating this class, we have to specify the required values of the properties of a polyline such as StrokeColor, StokeOpacity, and strokeWeight.</p>
+<p>We can add a polyline to a map by passing its object to the method <b>setMap(MapObject)</b>. We can delete the polyline by passing a null value to the SetMap() method.</p>
+<h3>Example</h3>
+<p>The following example shows a polyline highlighting the path between the cities Delhi, London, New York, and Beijing.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">(){</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapProp </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">51.508742</span><span class="pun">,-</span><span class="lit">0.120850</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">3</span><span class="pun">,</span><span class="pln">
+               mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+            </span><span class="pun">};</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"googleMap"</span><span class="pun">),</span><span class="pln">mapProp</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> tourplan </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Polyline</span><span class="pun">({</span><span class="pln">
+               path</span><span class="pun">:[</span><span class="pln">
+                  </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">28.613939</span><span class="pun">,</span><span class="pln"> </span><span class="lit">77.209021</span><span class="pun">),</span><span class="pln">
+                  </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">51.507351</span><span class="pun">,</span><span class="pln"> </span><span class="pun">-</span><span class="lit">0.127758</span><span class="pun">),</span><span class="pln">
+                  </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">40.712784</span><span class="pun">,</span><span class="pln"> </span><span class="pun">-</span><span class="lit">74.005941</span><span class="pun">),</span><span class="pln">
+                  </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">28.213545</span><span class="pun">,</span><span class="pln"> </span><span class="lit">94.868713</span><span class="pun">)</span><span class="pln"> 
+               </span><span class="pun">],</span><span class="pln">
+               
+               strokeColor</span><span class="pun">:</span><span class="str">"#0000FF"</span><span class="pun">,</span><span class="pln">
+               strokeOpacity</span><span class="pun">:</span><span class="lit">0.6</span><span class="pun">,</span><span class="pln">
+               strokeWeight</span><span class="pun">:</span><span class="lit">2</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+            
+            tourplan</span><span class="pun">.</span><span class="pln">setMap</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln">
+            </span><span class="com">//to remove plylines</span><span class="pln">
+            </span><span class="com">//tourplan.setmap(null);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"googleMap"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/polylines.html" height="420px" width="600px"></iframe>
+<h2>Polygons</h2>
+<p>Polygons are used to highlight a particular geographical area of a state or a country. You can create a desired polygon by instantiating the class <b>google.maps.Polygon</b>. While instantiating, we have to specify the desired values to the properties of Polygon such as path, strokeColor, strokeOapacity, fillColor, fillOapacity, etc.</p>
+<h3>Example</h3>
+<p>The following example shows how to draw a polygon to highlight the cities Hyderabad, Nagpur, and Aurangabad.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">(){</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapProp </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.433053</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.412172</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">4</span><span class="pun">,</span><span class="pln">
+               mapTypeId</span><span class="pun">:</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+            </span><span class="pun">};</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"googleMap"</span><span class="pun">),</span><span class="pln">mapProp</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> myTrip </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+               </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.385044</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.486671</span><span class="pun">),</span><span class="pln">
+               </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">19.696888</span><span class="pun">,</span><span class="pln"> </span><span class="lit">75.322451</span><span class="pun">),</span><span class="pln"> 
+               </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">21.056296</span><span class="pun">,</span><span class="pln"> </span><span class="lit">79.057803</span><span class="pun">),</span><span class="pln"> 
+               </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.385044</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.486671</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">];</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> flightPath </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Polygon</span><span class="pun">({</span><span class="pln">
+               path</span><span class="pun">:</span><span class="pln">myTrip</span><span class="pun">,</span><span class="pln">
+               strokeColor</span><span class="pun">:</span><span class="str">"#0000FF"</span><span class="pun">,</span><span class="pln">
+               strokeOpacity</span><span class="pun">:</span><span class="lit">0.8</span><span class="pun">,</span><span class="pln">
+               strokeWeight</span><span class="pun">:</span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+               fillColor</span><span class="pun">:</span><span class="str">"#0000FF"</span><span class="pun">,</span><span class="pln">
+               fillOpacity</span><span class="pun">:</span><span class="lit">0.4</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+            
+            flightPath</span><span class="pun">.</span><span class="pln">setMap</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"googleMap"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/polygons.html" height="420px" width="600px"></iframe>
+<h2>Rectangles</h2>
+<p>We can use rectangles to highlight the geographical area of a particular region or a state using a rectangular box. We can have a rectangle on a map by instantiating the class <b>google.maps.Rectangle</b>. While instantiating, we have to specify the desired values to the properties of the rectangle such as path, strokeColor, strokeOapacity, fillColor, fillOapacity, strokeWeight, bounds, etc.</p>
+<h3>Example</h3>
+<p>The following example shows how to highlight a particular area on a map using a rectangle −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">(){</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapProp </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.433053</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.412172</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">6</span><span class="pun">,</span><span class="pln">
+               mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+            </span><span class="pun">};</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"googleMap"</span><span class="pun">),</span><span class="pln">mapProp</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> myrectangle </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Rectangle</span><span class="pun">({</span><span class="pln">
+               strokeColor</span><span class="pun">:</span><span class="str">"#0000FF"</span><span class="pun">,</span><span class="pln">
+               strokeOpacity</span><span class="pun">:</span><span class="lit">0.6</span><span class="pun">,</span><span class="pln">
+               strokeWeight</span><span class="pun">:</span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+               
+               fillColor</span><span class="pun">:</span><span class="str">"#0000FF"</span><span class="pun">,</span><span class="pln">
+               fillOpacity</span><span class="pun">:</span><span class="lit">0.4</span><span class="pun">,</span><span class="pln">
+               map</span><span class="pun">:</span><span class="pln">map</span><span class="pun">,</span><span class="pln">
+               
+               bounds</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLngBounds</span><span class="pun">(</span><span class="pln">
+                  </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.342761</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.552432</span><span class="pun">),</span><span class="pln">
+                  </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">16.396553</span><span class="pun">,</span><span class="pln"> </span><span class="lit">80.727725</span><span class="pun">)</span><span class="pln">
+               </span><span class="pun">)</span><span class="pln">
+					
+            </span><span class="pun">});</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"googleMap"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>This gives you the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/rectangles.html" height="420px" width="600px"></iframe>
+<h2>Circles</h2>
+<p>Just as rectangles, we can use Circles to highlight the geographical area of a particular region or a state using a circle by instantiating the class <b>google.maps.Circle</b>. While instantiating, we have to specify the desired values to the properties of the circle such as path, strokeColor, strokeOapacity, fillColor, fillOapacity, strokeWeight, radius, etc.</p>
+<h3>Example</h3>
+<p>The following example shows how to highlight the area around New Delhi using a circle −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">(){</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapProp </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">28.613939</span><span class="pun">,</span><span class="lit">77.209021</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pun">,</span><span class="pln">
+               mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+            </span><span class="pun">};</span><span class="pln">
+         
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"googleMap"</span><span class="pun">),</span><span class="pln">mapProp</span><span class="pun">);</span><span class="pln">
+         
+            </span><span class="kwd">var</span><span class="pln"> myCity </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Circle</span><span class="pun">({</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">28.613939</span><span class="pun">,</span><span class="lit">77.209021</span><span class="pun">),</span><span class="pln">
+               radius</span><span class="pun">:</span><span class="lit">150600</span><span class="pun">,</span><span class="pln">
+            
+               strokeColor</span><span class="pun">:</span><span class="str">"#B40404"</span><span class="pun">,</span><span class="pln">
+               strokeOpacity</span><span class="pun">:</span><span class="lit">0.6</span><span class="pun">,</span><span class="pln">
+               strokeWeight</span><span class="pun">:</span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+            
+               fillColor</span><span class="pun">:</span><span class="str">"#B40404"</span><span class="pun">,</span><span class="pln">
+               fillOpacity</span><span class="pun">:</span><span class="lit">0.6</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+				
+            myCity</span><span class="pun">.</span><span class="pln">setMap</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"googleMap"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/circles.html" height="420px" width="600px"></iframe>
+<h1>Google Maps - Info Window</h1>
+<p>In addition to markers, polygons, polylines, and other geometrical shapes, we can also draw an Info Window on the map. This chapter explains how to use the Info Window.</p>
+<h2>Adding a Window</h2>
+<p>Info Window is used to add any kind of information to the map. For instance, if you want to provide information about a location on the map, you can use an info window. Usually the info window is attached to a marker. You can attach an info window by instantiating the <b>google.maps.InfoWindow</b> class. It has the following properties −</p>
+<ul class="list">
+<li><p><b>Content</b> − You can pass your content in String format using this option.</p></li>
+<li><p><b>position</b> − You can choose the position of the info window using this option.</p></li>
+<li><p><b>maxWidth</b> − By default, the info window's width will be stretched till the text is wrapped. By specifying maxWidth, we can restrict the size of the info window horizontally.</p></li>
+</ul>
+<h3>Example</h3>
+<p>The following example shows how to set the marker and specify an info window above it −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.433053</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.412172</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.433053</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.412172</span><span class="pun">),</span><span class="pln">
+               map</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">,</span><span class="pln">
+               draggable</span><span class="pun">:</span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               icon</span><span class="pun">:</span><span class="str">'/scripts/img/logo-footer.png'</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+            
+            marker</span><span class="pun">.</span><span class="pln">setMap</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> infowindow </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">InfoWindow</span><span class="pun">({</span><span class="pln">
+               content</span><span class="pun">:</span><span class="str">"388-A , Road no 22, Jubilee Hills, Hyderabad Telangana, INDIA-500033"</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+				
+            infowindow</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="pln">map</span><span class="pun">,</span><span class="pln">marker</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It will produce the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/adding_window_in_google_maps.html" height="420px" width="600px"></iframe>
+<h1>Google Maps - Symbols</h1>
+<p>In addition to markers, polygons, polylines, and other geometrical shapes, we can also add predefined vector images(symbols) on a map. This chapter explains how to use the symbols provided by Google Maps.</p>
+<h2>Adding a Symbol</h2>
+<p>Google provides various vector-based images (symbols) that can be used on a marker or a polyline. Just like other overlays, to draw these predefined symbols on a map, we have to instantiate their respective classes. Given below is a list of predefined symbols provided by Google and their class names −</p>
+<ul class="list">
+<li><p><b>Circle</b> − google.maps.SymbolPath.CIRCLE</p></li>
+<li><p><b>Backward Pointing arrow (closed)</b> − google.maps.SymbolPath.BACKWARD_CLOSED_ARROW</p></li>
+<li><p><b>Forward Pointing arrow (closed)</b> − google.maps.SymbolPath.FORWARD_CLOSED_ARROW</p></li>
+<li><p><b>Forward Pointing arrow (open)</b> − google.maps.SymbolPath.CIRCLE</p></li>
+<li><p><b>Backward Pointing arrow (open)</b> − google.maps.SymbolPath.CIRCLE</p></li>
+</ul>
+<p>These symbols have the following properties − path, fillColor, fillOpacity, scale, stokeColor, strokeOpacity, and strokeWeight.</p>
+<h3>Example</h3>
+<p>The following example demonstrates how to draw predefined symbols on Google Map.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.433053</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.412172</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">.</span><span class="pln">getCenter</span><span class="pun">(),</span><span class="pln">
+               
+               icon</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  path</span><span class="pun">:</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">SymbolPath</span><span class="pun">.</span><span class="pln">BACKWARD_CLOSED_ARROW</span><span class="pun">,</span><span class="pln">
+                  scale</span><span class="pun">:</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln">
+                  strokeWeight</span><span class="pun">:</span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+                  strokeColor</span><span class="pun">:</span><span class="str">"#B40404"</span><span class="pln">
+               </span><span class="pun">},</span><span class="pln">
+					
+               draggable</span><span class="pun">:</span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               map</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">,</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/adding_symbol_in_google_maps.html" height="420px" width="600px"></iframe>
+<h2>Animating the Symbol</h2>
+<p>Just like markers, you can add animations such as bounce and drop to the symbols as well.</p>
+<h3>Example</h3>
+<p>The following example shows how to use a symbol as a marker on a map and add animation to it −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapOptions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.433053</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.412172</span><span class="pun">),</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"sample"</span><span class="pun">),</span><span class="pln">mapOptions</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln"> map</span><span class="pun">.</span><span class="pln">getCenter</span><span class="pun">(),</span><span class="pln">
+               
+               icon</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  path</span><span class="pun">:</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">SymbolPath</span><span class="pun">.</span><span class="pln">BACKWARD_CLOSED_ARROW</span><span class="pun">,</span><span class="pln">
+                  scale</span><span class="pun">:</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln">
+                  strokeWeight</span><span class="pun">:</span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+                  strokeColor</span><span class="pun">:</span><span class="str">"#B40404"</span><span class="pln">
+               </span><span class="pun">},</span><span class="pln">
+               
+               animation</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Animation</span><span class="pun">.</span><span class="pln">DROP</span><span class="pun">,</span><span class="pln">
+               draggable</span><span class="pun">:</span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+               map</span><span class="pun">:</span><span class="pln"> map
+            </span><span class="pun">});</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"sample"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/symbols_animated.html" height="420px" width="600px"></iframe>
+<h1>Google Maps - Events</h1>
+<p>The Google Maps JavaScript program can respond to various events generated by the user. This chapter provides examples demonstrating how to perform event handling while working with Google Maps.</p> 
+<h2>Adding an Event Listener</h2>
+<p>You can add an event listener using the method <b>addListener()</b>. It accepts parameters such as object name on which we want to add the listener, name of the event, and the handler event.</p>
+<h3>Example</h3>
+<p>The following example shows how to add an event listener to a marker object. The program raises the zoom value of the map by 5 each time we double-click on the marker.</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">var</span><span class="pln"> myCenter </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.433053</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.412172</span><span class="pun">);</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">(){</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapProp </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="pln"> myCenter</span><span class="pun">,</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">5</span><span class="pun">,</span><span class="pln">
+               mapTypeId</span><span class="pun">:</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+            </span><span class="pun">};</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"googleMap"</span><span class="pun">),</span><span class="pln">mapProp</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln"> myCenter</span><span class="pun">,</span><span class="pln">
+               title</span><span class="pun">:</span><span class="str">'Click to zoom'</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+            
+            marker</span><span class="pun">.</span><span class="pln">setMap</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="com">//Zoom to 7 when clicked on marker</span><span class="pln">
+            google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">addListener</span><span class="pun">(</span><span class="pln">marker</span><span class="pun">,</span><span class="str">'click'</span><span class="pun">,</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               map</span><span class="pun">.</span><span class="pln">setZoom</span><span class="pun">(</span><span class="lit">9</span><span class="pun">);</span><span class="pln">
+               map</span><span class="pun">.</span><span class="pln">setCenter</span><span class="pun">(</span><span class="pln">marker</span><span class="pun">.</span><span class="pln">getPosition</span><span class="pun">());</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"googleMap"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/events_in_google_maps.html" height="420px" width="600px"></iframe>
+<h2>Opening an Info Window on Click</h2>
+<p>The following code opens an info window on clicking the marker −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">var</span><span class="pln"> myCenter </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.433053</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.412172</span><span class="pun">);</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">(){</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapProp </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="pln">myCenter</span><span class="pun">,</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">4</span><span class="pun">,</span><span class="pln">
+               mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+            </span><span class="pun">};</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"googleMap"</span><span class="pun">),</span><span class="pln">mapProp</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln">myCenter</span><span class="pun">,</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+            
+            marker</span><span class="pun">.</span><span class="pln">setMap</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> infowindow </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">InfoWindow</span><span class="pun">({</span><span class="pln">
+               content</span><span class="pun">:</span><span class="str">"Hi"</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+            
+            google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">addListener</span><span class="pun">(</span><span class="pln">marker</span><span class="pun">,</span><span class="pln"> </span><span class="str">'click'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               infowindow</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="pln">map</span><span class="pun">,</span><span class="pln">marker</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"googleMap"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/event_google_maps_info_window.html" height="420px" width="600px"></iframe>
+<h2>Removing the Listener</h2>
+<p>You can remove an existing listener using the method <b>removeListener()</b>. This method accepts the listener object, therefore we have to assign the listener to a variable and pass it to this method.</p>
+<h3>Example</h3>
+<p>The following code shows how to remove a listener −</p>
+<pre class="prettyprint notranslate tryit prettyprinted"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"http://maps.googleapis.com/maps/api/js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+      
+      </span><span class="tag">&lt;script&gt;</span><span class="pln">
+         </span><span class="kwd">var</span><span class="pln"> myCenter </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">LatLng</span><span class="pun">(</span><span class="lit">17.433053</span><span class="pun">,</span><span class="pln"> </span><span class="lit">78.412172</span><span class="pun">);</span><span class="pln">
+         </span><span class="kwd">function</span><span class="pln"> loadMap</span><span class="pun">(){</span><span class="pln">
+			
+            </span><span class="kwd">var</span><span class="pln"> mapProp </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               center</span><span class="pun">:</span><span class="pln">myCenter</span><span class="pun">,</span><span class="pln">
+               zoom</span><span class="pun">:</span><span class="lit">4</span><span class="pun">,</span><span class="pln">
+               mapTypeId</span><span class="pun">:</span><span class="pln">google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">MapTypeId</span><span class="pun">.</span><span class="pln">ROADMAP
+            </span><span class="pun">};</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> map </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Map</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"googleMap"</span><span class="pun">),</span><span class="pln">mapProp</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> marker </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">Marker</span><span class="pun">({</span><span class="pln">
+               position</span><span class="pun">:</span><span class="pln">myCenter</span><span class="pun">,</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+            
+            marker</span><span class="pun">.</span><span class="pln">setMap</span><span class="pun">(</span><span class="pln">map</span><span class="pun">);</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> infowindow </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="typ">InfoWindow</span><span class="pun">({</span><span class="pln">
+               content</span><span class="pun">:</span><span class="str">"Hi"</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+            
+            </span><span class="kwd">var</span><span class="pln"> myListener </span><span class="pun">=</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">addListener</span><span class="pun">(</span><span class="pln">marker</span><span class="pun">,</span><span class="pln"> </span><span class="str">'click'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               infowindow</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="pln">map</span><span class="pun">,</span><span class="pln">marker</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">});</span><span class="pln">
+				
+            google</span><span class="pun">.</span><span class="pln">maps</span><span class="pun">.</span><span class="pln">event</span><span class="pun">.</span><span class="pln">removeListener</span><span class="pun">(</span><span class="pln">myListener</span><span class="pun">);</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+      </span><span class="tag">&lt;/script&gt;</span><span class="pln">
+      
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   
+   </span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">onload</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">loadMap</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"googleMap"</span><span class="pln"> </span><span class="atn">style</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="atv">"</span><span class="pln">width</span><span class="pun">:</span><span class="lit">580px</span><span class="pun">;</span><span class="pln"> height</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="atv">"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+   
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>It produces the following output −</p>
+<iframe class="result" src="./Google Maps Quick Guide_files/remove_listener.html" height="420px" width="600px"></iframe>
+<hr> 
+<div class="pre-btn">
+<a href="http://www.tutorialspoint.com/google_maps/google_maps_events.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="http://www.tutorialspoint.com/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="nxt-btn">
+<a href="http://www.tutorialspoint.com/google_maps/google_maps_useful_resources.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script type="text/javascript"><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="./Google Maps Quick Guide_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:400px;margin:0;padding:0;position:relative;visibility:visible;width:580px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:400px;margin:0;padding:0;position:relative;visibility:visible;width:580px;background-color:transparent"><iframe width="580" height="400" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;http://www.facebook.com/sharer.php?u=&#39; + &#39;http://www.tutorialspoint.com/google_maps/google_maps_quick_guide.htm&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Google Maps Quick Guide_files/facebookIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;http://twitter.com/share?url=&#39; + &#39;http://www.tutorialspoint.com/google_maps/google_maps_quick_guide.htm&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Google Maps Quick Guide_files/twitterIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://www.linkedin.com/cws/share?url=&#39; + &#39;http://www.tutorialspoint.com/google_maps/google_maps_quick_guide.htm&amp;title=&#39;+ document.title,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Google Maps Quick Guide_files/linkedinIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://plus.google.com/share?url=http://www.tutorialspoint.com/google_maps/google_maps_quick_guide.htm&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Google Maps Quick Guide_files/googlePlusIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;http://www.stumbleupon.com/submit?url=http://www.tutorialspoint.com/google_maps/google_maps_quick_guide.htm&amp;title=&#39;+ document.title,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Google Maps Quick Guide_files/StumbleUponIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;http://reddit.com/submit?url=http://www.tutorialspoint.com/google_maps/google_maps_quick_guide.htm&amp;title=&#39;+ document.title,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=656,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Google Maps Quick Guide_files/reddit.jpg" alt="img">
+</a>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="./Google Maps Quick Guide_files/show_ads.js">
+</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="./Google Maps Quick Guide_files/show_ads.js">
+</script><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./Google Maps Quick Guide_files/show_ads.js">
+</script><ins id="aswift_4_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="http://www.tutorialspoint.com/index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="./Google Maps Quick Guide_files/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="http://www.tutorialspoint.com/about/tutorials_writing.htm">Write for us</a></li>
+         <li><a href="http://www.tutorialspoint.com/about/faq.htm">FAQ's</a></li>
+         <li><a href="http://www.tutorialspoint.com/about/about_helping.htm">Helping</a></li>
+         <li><a href="http://www.tutorialspoint.com/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>© Copyright 2016. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == &#39;Enter email for newsletter...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Enter email for newsletter...&#39;;}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script type="text/javascript" src="./Google Maps Quick Guide_files/custom-min.js"></script><a class="scroll-to-top visible" href="http://www.tutorialspoint.com/#" id="scrollToTop"><i class="icon icon-chevron-up icon-white"></i></a>
+<script src="./Google Maps Quick Guide_files/urchin.js">
+</script>
+<script type="text/javascript">
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script type="text/javascript" src="./Google Maps Quick Guide_files/jquery.colorbox-min.js"></script>
+<script type="text/javascript">
+   var tryit = new $.TryIt('/google_maps/try_google_maps.php');
+   tryit.compile();
+</script><div id="source" style="display:none;"></div><div id="supportsource" style="display:none;"></div><div id="utilsource" style="display:none;"></div><div id="extrasource" style="display:none;"></div><div id="inputs" style="display:none;"></div><div id="filename" style="display:none;"></div>
+
+
+<div class="autocomplete-suggestions " style="top: 244px; left: 929.5px; width: 345px;"></div><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>

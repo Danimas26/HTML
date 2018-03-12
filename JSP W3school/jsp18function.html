@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+
+<p>This example calls a function which performs a calculation and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+
+<p id="demo0"></p>
+<script>
+var x = function (a, b) {return a * b};
+document.getElementById("demo0").innerHTML = x;
+</script>
+
+
+<p>After a function has been stored in a variable,
+the variable can be used as a function:</p>
+
+<p id="demo1"></p>
+
+<script>
+var x = function (a, b) {return a * b};
+document.getElementById("demo1").innerHTML = x(4, 3);
+</script>
+
+
+<p>JavaScript has an built-in function constructor.</p>
+<p id="demo2"></p>
+
+<script>
+var myFunction = new Function("a", "b", "return a * b");
+document.getElementById("demo2").innerHTML = myFunction(4, 3);
+</script>
+
+
+<p id="demo3"></p>
+
+<script>
+var myFunction = function (a, b) {return a * b}
+document.getElementById("demo3").innerHTML = myFunction(4, 3);
+</script>
+
+<p>Functions can be invoked automatically without being called:</p>
+
+<p id="demo4"></p>
+
+<script>
+(function () {
+    document.getElementById("demo4").innerHTML = "Hello! I called myself";
+})();
+</script>
+
+
+<p>Functions can be treated as values:</p>
+<p>x = myFunction(4,3) or x = 12</p>
+<p>In both cases, x becomes a number with the value of 12.</p>
+<p id="demo5"></p>
+
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+var x = myFunction(4, 3);
+document.getElementById("demo5").innerHTML = x;
+</script>
+
+
+<p>Functions can be used in expressions.</p>
+<p id="demo6"></p>
+
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+var x = myFunction(4, 3) * 2;
+document.getElementById("demo6").innerHTML = x;
+</script>
+
+<p>The arguments.length property returns the number of arguments received by the function:</p>
+
+<p id="demo7"></p>
+
+<script>
+function myFunction(a, b) {
+    return arguments.length;
+}
+document.getElementById("demo7").innerHTML = myFunction(4, 3);
+</script>
+
+<p>The toString() method returns the function as a string:</p>
+
+<p id="demo8"></p>
+
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demo8").innerHTML = myFunction.toString();
+</script>
+
+<p>Setting a default value to a function parameter.</p>
+<p id="demo9"></p>
+
+<script>
+function myFunction(x, y) {
+    if (y === undefined) {
+        y = 0;
+    }    
+    return x * y;
+}
+document.getElementById("demo9").innerHTML = myFunction(4);
+</script>
+
+
+<p>Finding the largest number.</p>
+<p id="demoa"></p>
+
+<script>
+function findMax() {
+    var i;
+    var max = -Infinity;
+    for(i = 0; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+            max = arguments[i];
+        }
+    }
+    return max;
+} 
+document.getElementById("demoq").innerHTML = findMax(4, 5, 6);
+</script>
+
+<p>Sum of all arguments:</p>
+<p id="demos"></p>
+
+<script>
+function sumAll() {
+    var i, sum = 0;
+    for(i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+} 
+document.getElementById("demos").innerHTML =
+sumAll(1, 123, 500, 115, 44, 88);
+</script>
+
+<p>
+The global function (myFunction) returns the product of the arguments (a ,b):
+</p>
+
+<p id="demod"></p>
+
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demod").innerHTML = myFunction(10, 2); 
+</script>
+
+<p>myFunction() is the same as window.myFunction().</p>
+
+<p id="demof"></p>
+
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demof").innerHTML = window.myFunction(10, 2); 
+</script>
+
+
+<p>In HTML the value of <b>this</b>, in a global function, is the window object.</p>
+
+<p id="demog"></p>
+
+<script>
+function myFunction() {
+    return this;
+}
+document.getElementById("demog").innerHTML = myFunction(); 
+</script>
+
+
+<p id="demoh"></p>
+
+<script>
+var myObject, myArray;
+function myFunction(a, b) {
+    return a * b;
+}
+myArray = [10, 2]
+myObject = myFunction.apply(myObject, myArray);      // Will return 20 
+document.getElementById("demoh").innerHTML = myObject; 
+</script>
+
+<p id="demoj"></p>
+
+<script>
+var myObject;
+function myFunction(a, b) {
+    return a * b;
+}
+myObject = myFunction.call(myObject, 10, 2);    // Will return 20 
+document.getElementById("demoj").innerHTML = myObject; 
+</script>
+
+
+<p>In this example, myFunction is a function constructor:</p>
+
+<p id="demok"></p>
+
+<script>
+function myFunction(arg1, arg2) {
+    this.firstName = arg1;
+    this.lastName  = arg2;
+}
+
+var x = new myFunction("John","Doe")
+document.getElementById("demok").innerHTML = x.firstName; 
+</script>
+
+
+<p>myObject.fullName() will return John Doe:</p>
+
+<p id="demol"></p>
+
+<script>
+var myObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+document.getElementById("demol").innerHTML = myObject.fullName(); 
+</script>
+
+
+<p>A function can access variables defined outside the function:</p>
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+
+<p id="demoz"></p>
+
+<script>
+var a = 4;
+function myFunction() {
+    document.getElementById("demoz").innerHTML = a * a;
+} 
+</script>
+
+
+<p>Counting with a global variable.</p>
+
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demox">0</p>
+
+<script>
+var counter = 0;
+
+function add() {
+    return counter += 1;
+}
+
+function myFunction(){
+    document.getElementById("demox").innerHTML = add();
+}
+</script>
+
+<p>Counting with a local variable.</p>
+
+<p id="demov">0</p>
+
+<script>
+document.getElementById("demov").innerHTML = add();
+function add() {
+    var counter = 0;
+    function plus() {counter += 1;}
+    plus();    
+    return counter; 
+}
+</script>
+
+<p>Counting with a local variable.</p>
+
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demob">0</p>
+
+<script>
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+})();
+
+function myFunction(){
+    document.getElementById("demob").innerHTML = add();
+}
+</script>
+</body>
+</html>

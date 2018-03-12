@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+      <script src = "http://maps.googleapis.com/maps/api/js"></script>
+       <!-- To change language <script src = "https://maps.googleapis.com/maps/api/js?language=zh-Hans"></script> -->
+	   
+      <script>
+         function loadMap() {
+			
+            var mapOptions = {
+                center:new google.maps.LatLng(12.9499889, 77.711428),
+                zoom:13,	<!-- zoom of map -->
+				
+				mapTypeId:google.maps.MapTypeId.Hybrid, 			    <!-- map type ROADMAP/SATELLITE/Hybrid/TERRAIN   -->
+			    disableDefaultUI: false, 						<!-- ture = to remove zoom / pan / Street view/ map type controls   -->
+
+               panControl: true,
+               zoomControl: true,
+               scaleControl: true,
+               mapTypeControl:true,
+               streetViewControl:true,
+               overviewMapControl:true,
+               rotateControl:true
+            }
+				
+            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+         }
+      </script>
+      
+   </head>
+   
+   <body onload = "loadMap()">
+      <div id = "sample" style = "width:580px; height:400px;"></div>
+   </body>
+
+</html>

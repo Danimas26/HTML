@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+      <script src = "http://maps.googleapis.com/maps/api/js"></script>
+      
+      <script>
+         var myCenter = new google.maps.LatLng(17.433053, 78.412172);
+         function loadMap(){
+			
+            var mapProp = {
+               center:myCenter,
+               zoom:4,
+               mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            
+            var marker = new google.maps.Marker({
+               position:myCenter,
+            });
+            
+            marker.setMap(map);
+            
+            var infowindow = new google.maps.InfoWindow({
+               content:"Hey these marker location on Map"
+            });
+            
+            google.maps.event.addListener(marker, 'click', function() {
+               infowindow.open(map,marker);
+            });
+         }
+      </script>
+      
+   </head>
+   
+   <body onload = "loadMap()">
+      <div id = "googleMap" style = "width:580px; height:400px;"></div>
+   </body>
+   
+</html>

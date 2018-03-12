@@ -1,0 +1,249 @@
+<html>  
+<head>  
+</head>
+<body>  
+<script type="text/javascript">  
+function msg(){  
+ alert("Hello Alert Box");  
+}  
+</script>  
+<input type="button" value="Alert" onclick="msg()"/>  
+
+<script type="text/javascript">  
+function deletemsg(){  
+var v= confirm("Are u sure?");  
+if(v==true){  
+alert("ok");  
+}  
+else{  
+alert("cancel");  
+}  
+  
+}  
+</script>  
+  
+<input type="button" value="confirm" onclick="deletemsg()"/>  
+
+
+<script type="text/javascript">  
+function msg3(){  
+var v= prompt("Who are you?");  
+alert("I am "+v);  
+  
+}  
+</script>  
+  
+<input type="button" value="prompt" onclick="msg3()"/>  
+
+
+<script type="text/javascript">  
+function msgopen(){  
+open("http://www.javatpoint.com");  
+}  
+</script>  
+<input type="button" value="javatpoint open" onclick="msgopen()"/>  
+
+<script type="text/javascript">  
+function msgTimeout(){  
+setTimeout(  
+function(){  
+alert("Welcome to Javatpoint after 2 seconds")  
+},2000);  
+  
+}  
+</script>  
+  
+<input type="button" value="Timeout" onclick="msgTimeout()"/>  
+<table class="alt">
+<tbody><tr><th>Method</th><th>Description</th></tr>
+<tr><td>alert()</td><td>displays the alert box containing message with ok button.</td></tr>
+<tr><td>confirm()</td><td>displays the confirm dialog box containing message with ok and cancel button.</td></tr>
+<tr><td>prompt()</td><td>displays a dialog box to get input from the user.</td></tr>
+<tr><td>open()</td><td>opens the new window.</td></tr>
+<tr><td>close()</td><td>closes the current window.</td></tr>
+<tr><td>setTimeout()</td><td>performs action after specified time like calling function, evaluating expressions etc.</td></tr>
+</tbody></table>
+
+
+
+</br></br></br>history object</br>
+history.back();//for previous page  
+history.forward();//for next page  
+history.go(2);//for next 2nd page  
+history.go(-2);//for previous 2nd page  
+<table class="alt">
+<tbody><tr><th>No.</th><th>Method</th><th>Description</th></tr>
+<tr><td>1</td><td>forward()</td><td>loads the next page.</td></tr>
+<tr><td>2</td><td>back()</td><td>loads the previous page.</td></tr>
+<tr><td>3</td><td>go()</td><td>loads the given page number.</td></tr>
+<tr><td>1</td><td>length</td><td>returns the length of the history URLs.</td></tr>
+</tbody></table>
+
+
+</br>navigator object</br>
+<script>  
+document.writeln("<br/>navigator.appCodeName: "+navigator.appCodeName);  
+document.writeln("<br/>navigator.appName: "+navigator.appName);  
+document.writeln("<br/>navigator.appVersion: "+navigator.appVersion);  
+document.writeln("<br/>navigator.cookieEnabled: "+navigator.cookieEnabled);  
+document.writeln("<br/>navigator.language: "+navigator.language);  
+document.writeln("<br/>navigator.userAgent: "+navigator.userAgent);  
+document.writeln("<br/>navigator.platform: "+navigator.platform);  
+document.writeln("<br/>navigator.onLine: "+navigator.onLine);  
+</script>  
+<table class="alt">
+<tbody><tr><th>No.</th><th>Property</th><th>Description</th></tr>
+<tr><td>1</td><td>appName</td><td>returns the name</td></tr>
+<tr><td>2</td><td>appVersion</td><td>returns the version</td></tr>
+<tr><td>3</td><td>appCodeName</td><td>returns the code name</td></tr>
+<tr><td>4</td><td>cookieEnabled</td><td>returns true if cookie is enabled otherwise false</td></tr>
+<tr><td>5</td><td>userAgent</td><td>returns the user agent</td></tr>
+<tr><td>6</td><td>language</td><td>returns the language. It is supported in Netscape and Firefox only.</td></tr>
+<tr><td>7</td><td>userLanguage</td><td>returns the user language. It is supported in IE only.</td></tr>
+<tr><td>8</td><td>plugins</td><td>returns the plugins. It is supported in Netscape and Firefox only.</td></tr>
+<tr><td>9</td><td>systemLanguage</td><td>returns the system language. It is supported in IE only.</td></tr>
+<tr><td>10</td><td>mimeTypes[]</td><td>returns the array of mime type. It is supported in Netscape and Firefox only.</td></tr>
+<tr><td>11</td><td>platform</td><td>returns the platform e.g. Win32.</td></tr>
+<tr><td>12</td><td>online</td><td>returns true if browser is online otherwise false.</td></tr>
+</tbody></table>
+
+
+</br>JavaScript Screen Object</br>
+<script>  
+document.writeln("<br/>screen.width: "+screen.width);  
+document.writeln("<br/>screen.height: "+screen.height);  
+document.writeln("<br/>screen.availWidth: "+screen.availWidth);  
+document.writeln("<br/>screen.availHeight: "+screen.availHeight);  
+document.writeln("<br/>screen.colorDepth: "+screen.colorDepth);  
+document.writeln("<br/>screen.pixelDepth: "+screen.pixelDepth);  
+</script>  
+<table class="alt">
+<tbody><tr><th>No.</th><th>Property</th><th>Description</th></tr>
+<tr><td>1</td><td>width</td><td>returns the width of the screen</td></tr>
+<tr><td>2</td><td>height</td><td>returns the height of the screen</td></tr>
+<tr><td>3</td><td>availWidth</td><td>returns the available width</td></tr>
+<tr><td>4</td><td>availHeight</td><td>returns the available height</td></tr>
+<tr><td>5</td><td>colorDepth</td><td>returns the color depth</td></tr>
+<tr><td>6</td><td>pixelDepth</td><td>returns the pixel depth.</td></tr>
+</tbody></table>
+
+</br></br>JavaScript document Object</br>
+<script type="text/javascript">  
+function printvalue(){  
+var name=document.form1.name.value;  
+alert("Welcome: "+name);  
+}  
+</script>  
+  
+<form name="form1">  
+Enter Name:<input type="text" name="name"/>  
+<input type="button" onclick="printvalue()" value="print name"/>  
+</form>  
+
+<table class="alt">
+<tbody><tr><th>Method</th><th>Description</th></tr>
+<tr><td>write("string")</td><td>writes the given string on the doucment.</td></tr>
+<tr><td>writeln("string")</td><td>writes the given string on the doucment with newline character at the end.</td></tr>
+<tr><td>getElementById()</td><td>returns the element having the given id value.</td></tr>
+<tr><td>getElementsByName()</td><td>returns all the elements having the given name value.</td></tr>
+<tr><td>getElementsByTagName()</td><td>returns all the elements having the given tag name.</td></tr>
+<tr><td>getElementsByClassName()</td><td>returns all the elements having the given class name.</td></tr>
+</tbody></table>
+</br></br>
+<img src="https://www.javatpoint.com/images/javascript/dom.jpg" alt="javascript document object">
+</br>
+
+</br></br>getElementById</br>
+<script type="text/javascript">  
+function getcube(){  
+var number=document.getElementById("number").value;  
+alert(number*number*number);  
+}  
+</script>  
+<form>  
+Enter No:<input type="text" id="number" name="number"/><br/>  
+<input type="button" value="cube" onclick="getcube()"/>  
+</form>  
+
+</br>getElementsByName</br>
+<script type="text/javascript">  
+function totalelements()  
+{  
+var allgenders=document.getElementsByName("gender");  
+alert("Total Genders:"+allgenders.length);  
+}  
+</script>  
+<form>  
+Male:<input type="radio" name="gender" value="male">  
+Female:<input type="radio" name="gender" value="female">  
+  
+<input type="button" onclick="totalelements()" value="Total Genders">  
+</form>  
+
+
+</br>getElementsByTagName</br>
+<script type="text/javascript">  
+function countpara(){  
+var totalpara=document.getElementsByTagName("p");  
+alert("total p tags are: "+totalpara.length);  
+}  
+
+function counth2(){  
+var totalh2=document.getElementsByTagName("h2");  
+alert("total h2 tags are: "+totalh2.length);  
+}  
+function counth3(){  
+var totalh3=document.getElementsByTagName("h3");  
+alert("total h3 tags are: "+totalh3.length);  
+}  
+</script>  
+<p>This is a pragraph</p>  
+<p>Here we are going to count total number of paragraphs by getElementByTagName() method.</p>  
+<p>Let's see the simple example</p>  
+<button onclick="countpara()">count paragraph</button> 
+<h2>This is h2 tag</h2>  
+<h2>This is h2 tag</h2>  
+<h3>This is h3 tag</h3>  
+<h3>This is h3 tag</h3>  
+<h3>This is h3 tag</h3>  
+<button onclick="counth2()">count h2</button>  
+<button onclick="counth3()">count h3</button>   
+
+
+</br>innerHTML </br>
+<script type="text/javascript" >  
+function showcommentform() {  
+var data="Name:<input type='text' name='name'><br>Comment:<br><textarea rows='5' cols='80'></textarea>  
+<br><input type='submit' value='Post Comment'>";  
+document.getElementById('mylocation').innerHTML=data;  
+}  
+</script>  
+<form name="myForm">  
+<input type="button" value="comment" onclick="showcommentform()">  
+<div id="mylocation"></div>  
+</form>  
+
+
+</br>innerText</br>
+<script type="text/javascript" >  
+function validate() {  
+var msg;  
+if(document.myForm.userPass.value.length>5){  
+msg="good";  
+}  
+else{  
+msg="poor";  
+}  
+document.getElementById('mylocation').innerText=msg;  
+ }  
+  
+</script>  
+<form name="myForm">  
+<input type="password" value="" name="userPass" onkeyup="validate()">  
+Strength:<span id="mylocation">no strength</span>  
+</form>  
+
+
+
+</body>  
+</html>  

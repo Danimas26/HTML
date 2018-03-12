@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>World Apps</title>
+       	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+<!-- <p>{{data}}</p>  -->
+ <div ng-repeat='cnty in data'>
+         <!-- <p>{{cnty.ErrorID}}</p>  -->
+		 <!-- <p>{{cnty.results}}</p>  -->
+		 <!-- <p>{{cnty.continent_list}}</p> -->
+		 
+	  <!--  <p  ng-repeat="code in cnty.results " value="{{code}}">{{code}}</p>
+	   
+	<table>
+		  <tr ng-repeat="(key, value) in cnty.results">
+			<td> {{key}} </td> <td> {{ value }} </td>
+		  </tr>
+	</table> -->
+	
+<!-- 	</p> Using HTML ng-repeat </p>
+	<table border="1" cellpadding="5">
+		  <tr ng-repeat="(key, value) in cnty.results">
+			<th> {{ key }}: </th> 
+			<td>
+			   <input type="text" id="{{ key }}"  name="{{ key }}" size="35"  value="{{ value }}" 
+			</td>
+		  </tr>	
+		  <tr>
+                    <td colspan="2" align="center">
+                    <center>
+                        <input type="submit" value="Save" />
+                    </center> 
+                    </td>
+          </tr>
+	</table> 
+	
+	 <p align="right"><font color="blue">{{cnty.results.Code}}</font></p>
+			
+	 </br></p> Using HTML </p>-->
+	<form ng-submit="submitForm()" >
+	
+	 <table border="1" cellpadding="5">        
+                    <tr>
+                        <th>Code: </th>
+                        <td>
+                            <input type="text" name="code" id="code" size="35" value="{{cnty.results.Code}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Name: </th>
+                        <td>
+                            <input type="text" name="name" id="name" size="35" value="{{cnty.results.Name}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Continent: </th>
+                        <td>
+                               <select name="continent" id="continent" >
+								  <option ng-repeat="optionvalue in cnty.continent_list" value="{{optionvalue}}">{{optionvalue}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Region: </th>
+                        <td>
+                            <input type="text" name="region" id="region" size="35"  value="{{cnty.results.Region}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Surface Area: </th>
+                        <td>
+                            <input ng-model="number" type="number" min="0" name="surfaceArea" id="surfaceArea" size="35"  value="{{cnty.results.SurfaceArea}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Independence Year: </th>
+                        <td>
+                            <input type="number" min="0" max="2017"  name="indepYear" id="indepYear" size="35"  value="{{cnty.results.IndepYear}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Population: </th>
+                        <td>
+                            <input type="number" min="0" name="population" id="population" size="35"  value="{{cnty.results.Population}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Life Expectancy: </th>
+                        <td>
+                            <input type="number" min="0"  step="0.01" name="lifeExpectancy" id="lifeExpectancy" size="35"  value="{{cnty.results.LifeExpectancy}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>GNP: </th>
+                        <td>
+                            <input type="number" min="0" step="0.01"  name="GNP" id="GNP" size="35"  value="{{cnty.results.GNP}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>GNP Old: </th>
+                        <td>
+                            <input type="number" min="0" step="0.01" name="GNPOld" id="GNPOld" size="35"  value="{{cnty.results.GNPOld}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Local Name: </th>
+                        <td>
+                            <input type="text" name="localName" id="localName" size="35"  value="{{cnty.results.LocalName}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Government Form: </th>
+                        <td>
+                            <input type="text" name="governmentForm" id="governmentForm" size="35"  value="{{cnty.results.GovernmentForm}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Head of State: </th>
+                        <td>
+                            <input type="text" name="headOfState" id="headOfState" size="35" value="{{cnty.results.HeadOfState}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Capital: </th>
+                        <td>
+                            <input type="number" min="0" max="999" name="capital" id="capital" size="35"  value="{{cnty.results.Capital}}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Code2: </th>
+                        <td>
+                            <input type="text" maxlength="3" name="code2" id="code2" size="35"  value="{{cnty.results.Code2}}"  />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                    <center>
+                        <input type="submit" id="submit" value="Save" />
+                    </center> 
+                    </td>
+                    </tr>
+                </table>  
+				
+		</form>
+	
+	
+</div>
+
+				
+<script>
+var obj;
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+$http.get("http://localhost:8880/WorldApp/JSONCtrl?req=CountryEdit&code=AA4")
+//$http.get("https://gist.githubusercontent.com/anonymous/3928ed468e1fac619ffad7c27d13043a/raw/649216e057aaed3d8bfca0d32b09700318a2aa32/353caf2e-2618-11e8-8863-b1381ec97fb2.json")
+ // $http.get("https://api.myjson.com/bins/jk6al")
+  .then(function(response) {
+      $scope.data = response.data;
+	  console.log(response.data);
+  });
+});
+
+</script>
+<script>
+  $scope.submitForm = function() {
+        console.log("posting data....");
+		 var formData = {
+        firstname: "default",
+        emailaddress: "default",
+        textareacontent: "default",
+        gender: "default",
+        member: false,
+        file_profile: "default",
+        file_avatar: "default"
+		};
+
+        formData = $scope.form;
+        console.log(formData);
+        //$http.post('form.php', JSON.stringify(data)).success(function(){/*success callback*/});
+    };
+</script>
+
+
+<script>
+ function PostsCtrlAjax($scope, $http) {
+  console.log(data);
+   $http({method: 'POST', url: 'http://localhost:8880/WorldApp/JSONCtrl?req=CountryUpdate&code=AA4', dataType:"json", contentType:"application/json; charset=utf-8"}).then(function successCallback(data) {
+    	$scope.posts = data; // response data 
+    });
+  }
+</script>
+
+</body>
+</html>

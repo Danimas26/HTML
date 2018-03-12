@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+      <script src = "http://maps.googleapis.com/maps/api/js"></script>
+      
+      <script>
+         function loadMap() {
+			
+            var mapOptions = {
+			 <!-- location https://www.google.co.in/maps/@12.9499889,77.711428,16z?hl=en -->
+			 
+               center:new google.maps.LatLng(12.9499889, 77.711428),
+               zoom:10,
+               mapTypeControl: true,
+               
+               mapTypeControlOptions: {
+                  style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                  position:google.maps.ControlPosition.TOP_CENTER,
+                  
+				 <!-- position:  TOP_CENTER / TOP_LEFT / TOP_RIGHT / LEFT_TOP / RIGHT_TOP / LEFT_CENTER / RIGHT_CENTER / LEFT_BOTTOM / RIGHT_BOTTOM / BOTTOM_CENTER / BOTTOM_LEFT / BOTTOM_RIGHT -->
+				  
+                  mapTypeIds: [
+                     google.maps.MapTypeId.ROADMAP,
+                     google.maps.MapTypeId.TERRAIN
+                  ]
+               },
+					
+               zoomControl: true,
+               
+               zoomControlOptions: {
+                  style: google.maps.ZoomControlStyle.SMALL,
+                  position:google.maps.ControlPosition.BOTTOM_CENTER
+               }
+            }
+				
+            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+         }
+      </script>
+      
+   </head>
+   
+   <body onload = "loadMap()">
+      <div id = "sample" style = "width:580px; height:400px;"></div>
+   </body>
+   
+</html>

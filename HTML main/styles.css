@@ -1,0 +1,45 @@
+body {
+    background-color: lightgrey;
+}
+
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: green;
+    font-family: verdana;
+    font-size: 300%;
+}
+
+h3 {
+    color: yellow;
+    font-family: arial;
+    font-size: 80%;
+	border: 1px solid black;
+    padding: 10px;
+	margin: 30px;
+} 
+
+p  {
+    color: redyellow;
+    font-family: courier;
+    font-size: 160%;
+}
+
+#p01 {
+    color: orange;
+    font-family: courier;
+    font-size: 290%;
+}
+
+p.error {
+    color: red;
+	font-style: bold;
+}
+
+#p02 {
+black    font-family: courier;
+    font-size: 200%;
+	font-style: bold;
+}

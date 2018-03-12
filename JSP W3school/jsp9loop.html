@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript for Loops</h1>
+
+<p id="demo"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+var text = "";
+var i;
+for (i = 0; i < cars.length; i++) {
+    text += cars[i] + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+
+
+<h2>Reduce Activity in Loops</h2>
+
+<p id="demo1"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+var text = "";
+var i;
+var l = cars.length;
+for (i = 0; i < l; i++) {
+    text += cars[i] + "<br>";
+}
+document.getElementById("demo1").innerHTML = text;
+
+</script>
+
+
+<p id="demo7"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i, len, text;
+for (i = 0, len = cars.length, text = ""; i < len; i++) {
+    text += cars[i] + "<br>";
+}
+
+document.getElementById("demo7").innerHTML = text;
+</script>
+
+
+<p id="demo9"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+
+var i = 0;
+var len = cars.length;
+var text = "";
+
+for (; i < len; ) {
+    text += cars[i] + "<br>";
+    i++;
+}
+document.getElementById("demo9").innerHTML = text;
+</script>
+
+
+<p>The for/in statement loops through the properties of an object.</p>
+
+<p id="demo00"></p>
+
+<script>
+var txt = "";
+var person = {fname:"John", lname:"Doe", age:25}; 
+var x;
+for (x in person) {
+    txt += person[x] + " ";
+}
+document.getElementById("demo00").innerHTML = txt;
+</script>
+
+
+<h2>Switch Statement</h2>
+
+<p id="demoLoops"></p>
+
+<script>
+var day;
+switch (new Date().getDay()) {
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case  6:
+        day = "Saturday";
+		break;
+	default:  case  7: case  8:
+        day = "Looking forward to the Weekend";
+}
+document.getElementById("demoLoops").innerHTML = "Today is " + day;
+</script>
+
+
+<h2>While Statement</h2>
+<p id="demo4"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i = 0;
+var text = "";
+while (cars[i]) {
+    text += cars[i] + "<br>";
+    i++;
+}
+document.getElementById("demo4").innerHTML = text;
+</script>
+
+
+
+<h1>JavaScript do ... while</h1>
+
+<p id="demo5"></p>
+
+<script>
+var text = ""
+var i = 0;
+
+do {
+    text += "<br>The number is " + i;
+    i++;
+}
+while (i < 10);  
+
+document.getElementById("demo5").innerHTML = text;
+</script>
+
+
+<p>A loop with a break.</p>
+
+<p id="demor"></p>
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 10; i++) {
+    if (i === 3) { break; }
+    text += "The number is " + i + "<br>";
+}
+document.getElementById("demor").innerHTML = text;
+</script>
+
+
+<h3>A loop which will skip the step where i = 3.</h3>
+
+<p id="democ"></p>
+
+<script>
+var text = "";
+var i;
+for (i = 0; i < 10; i++) {
+    if (i === 3) { continue; }
+    text += "The number is " + i + "<br>";
+}
+document.getElementById("democ").innerHTML = text;
+</script>
+
+<h3>A list loop </h3>
+
+<p id="demon"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var text = "";
+
+list: {
+    text += cars[0] + "<br>"; 
+    text += cars[1] + "<br>"; 
+    text += cars[2] + "<br>"; 
+    break list;
+    text += cars[3] + "<br>"; 
+    text += cars[4] + "<br>"; 
+    text += cars[5] + "<br>"; 
+}
+
+document.getElementById("demon").innerHTML = text;
+</script>
+</body>
+</html>

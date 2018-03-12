@@ -1,0 +1,122 @@
+<html>  
+<head>  
+</head>
+<body>  
+
+<script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.password.value;  
+if (name==null || name==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+}  
+</script>  
+<body>  
+<form name="myform" method="post" action="abc.jsp" onsubmit="return validateform()" >  
+Name: <input type="text" name="name"><br/>  
+Password: <input type="password" name="password"><br/>  
+<input type="submit" value="register">  
+</form>  
+
+
+<script type="text/javascript">  
+function matchpass(){  
+var firstpassword=document.f1.password.value;  
+var secondpassword=document.f1.password2.value;  
+  
+if(firstpassword==secondpassword){  
+return true;  
+}  
+else{  
+alert("password must be same!");  
+return false;  
+}  
+}  
+</script>  
+  
+<form name="f1" action="register.jsp" onsubmit="return matchpass()">  
+Password:<input type="password" name="password" /><br/>  
+Re-enter Password:<input type="password" name="password2"/><br/>  
+<input type="submit">  
+</form>  
+
+
+
+<script>  
+function numvalidate(){  
+var numname=document.myform.numname.value;  
+if (isNaN(numname)){  
+  document.getElementById("num43").innerHTML="Enter Numeric value only";  
+  return false;  
+}else{  
+  return true;  
+  }  
+}  
+</script>  
+<form name="myform" onsubmit="return numvalidate()" >  
+Number: <input type="text" name="numname"><span id="num43"></span><br/>  
+<input type="submit" value="submit">  
+</form>  
+
+<script>  
+function validateemail()  
+{  
+var x=document.myform.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false;  
+  }  
+}  
+</script>  
+<body>  
+<form name="myform"  method="post" action="#" onsubmit="return validateemail();">  
+Email: <input type="text" name="email"><br/>  
+  
+<input type="submit" value="register">  
+</form>  
+
+
+<script>  
+function validate(){  
+var name=document.f1.name.value;  
+var password=document.f1.password.value;  
+var status=false;  
+  
+if(name.length<1){  
+document.getElementById("nameloc").innerHTML=  
+" <img src='unchecked.gif'/> Please enter your name";  
+status=false;  
+}else{  
+document.getElementById("nameloc").innerHTML=" <img src='checked.gif'/>";  
+status=true;  
+}  
+if(password.length<6){  
+document.getElementById("passwordloc").innerHTML=  
+" <img src='unchecked.gif'/> Password must be at least 6 char long";  
+status=false;  
+}else{  
+document.getElementById("passwordloc").innerHTML=" <img src='checked.gif'/>";  
+}  
+return status;  
+}  
+</script>  
+  
+<form name="f1" action="#" onsubmit="return validate()">  
+<table>  
+<tr><td>Enter Name:</td><td><input type="text" name="name"/>  
+<span id="nameloc"></span></td></tr>  
+<tr><td>Enter Password:</td><td><input type="password" name="password"/>  
+<span id="passwordloc"></span></td></tr>  
+<tr><td colspan="2"><input type="submit" value="register"/></td></tr>  
+</table>  
+</form>  
+
+</body>  
+</html>  

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<h1 ng-mousemove="count = count + 1">Mouse Over Me!</h1>
+
+<h2>{{ count }}</h2>
+
+<button ng-click="myFunction()">Click Me!</button>
+
+<p>{{ count1 }}</p>
+
+
+<button ng-click="myFunc()">Click Me!</button>
+
+<div ng-show="showMe">
+    <h1>Menu:</h1>
+    <div>Pizza</div>
+    <div>Pasta</div>
+    <div>Pesce</div>
+</div>
+
+<h1 ng-mousemove="myFunc22($event)">Coordinates Mouse Over Me!</h1>
+
+<p>Coordinates: {{x + ', ' + y}}</p>
+
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.count = 0;
+	$scope.count1 = 0;
+    $scope.myFunction = function() {
+        $scope.count1++;
+    };
+	$scope.showMe = false;
+    $scope.myFunc = function() {
+        $scope.showMe = !$scope.showMe;
+    };
+	$scope.myFunc22 = function(myE) {
+        $scope.x = myE.clientX;
+        $scope.y = myE.clientY;
+    }
+});
+</script> 
+
+
+
+<code>
+ these directives:
+
+ng-blur
+ng-change
+ng-click
+ng-copy
+ng-cut
+ng-dblclick
+ng-focus
+ng-keydown
+ng-keypress
+ng-keyup
+ng-mousedown
+ng-mouseenter
+ng-mouseleave
+ng-mousemove
+ng-mouseover
+ng-mouseup
+ng-paste
+The event directives allows us to run AngularJS functions at certain user events.
+
+An AngularJS event will not overwrite an HTML event, both events will be executed.
+
+Mouse Events
+Mouse events occur when the cursor moves over an element, in this order:
+
+ng-mouseenter
+ng-mouseover
+ng-mousemove
+ng-mouseleave
+Or when a mouse button is clicked on an element, in this order:
+
+ng-mousedown
+ng-mouseup
+ng-click
+You can add mouse events on any HTML element.
+</code>
+
+
+</body>
+</html>
