@@ -1,0 +1,31 @@
+{
+"data": {
+"ErrorID": 0,
+"results": {
+"Code": "AA4",
+"Name": "saurabhpharad1",
+"Continent": "Asia",
+"Region": "India",
+"SurfaceArea": 8680,
+"IndepYear": 2017,
+"Population": 66,
+"LifeExpectancy": 61.9,
+"GNP": 68,
+"GNPOld": 6858,
+"LocalName": "name p",
+"GovernmentForm": "tyt",
+"HeadOfState": "usa",
+"Capital": 56,
+"Code2": "A5"
+},
+"continent_list": [
+"Asia",
+"Europe",
+"North America",
+"Africa",
+"Oceania",
+"Antarctica",
+"South America"
+]
+}
+}
